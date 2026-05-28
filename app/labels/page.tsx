@@ -2,6 +2,8 @@ import { prisma } from "@/lib/prisma";
 import { getSettings } from "@/lib/settings";
 import LabelsClient from "./labels-client";
 
+export const dynamic = "force-dynamic";
+
 export default async function LabelsPage() {
   const [variants, settings] = await Promise.all([
     prisma.productVariant.findMany({

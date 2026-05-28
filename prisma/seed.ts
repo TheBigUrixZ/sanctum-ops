@@ -3,6 +3,17 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 async function main() {
+  await prisma.appSettings.upsert({
+    where: { id: "default" },
+    update: {},
+    create: { id: "default" },
+  });
+
+  if (process.env.SEED_SAMPLE_DATA !== "true") {
+    console.log("Seeded default app settings. Set SEED_SAMPLE_DATA=true to add sample inventory.");
+    return;
+  }
+
   const product = await prisma.product.upsert({
     where: { id: "seed-hoodie" },
     update: {},
@@ -42,6 +53,8 @@ async function main() {
       },
     });
   }
+
+  console.log("Seeded default app settings and sample inventory.");
 }
 
 main()

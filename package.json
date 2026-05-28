@@ -10,11 +10,16 @@
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
     "prisma:studio": "prisma studio",
+    "db:push": "prisma db push",
+    "db:studio": "prisma studio",
     "db:init": "prisma db execute --file prisma/init.sql --schema prisma/schema.prisma",
     "db:physical-items": "prisma db execute --file prisma/physical-items.sql --schema prisma/schema.prisma",
     "db:backfill-items": "tsx prisma/backfill-inventory-items.ts",
     "db:backfill-short-barcodes": "tsx prisma/backfill-short-barcodes.ts",
     "db:seed": "tsx prisma/seed.ts"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.19.3",

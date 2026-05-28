@@ -3,6 +3,8 @@ import { getSettings } from "@/lib/settings";
 import ProductForm from "../products/new/product-form";
 import InventoryManager from "./inventory-manager";
 
+export const dynamic = "force-dynamic";
+
 export default async function InventoryPage() {
   const [products, settings] = await Promise.all([
     prisma.product.findMany({

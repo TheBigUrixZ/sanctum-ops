@@ -12,6 +12,8 @@ import {
 import { generateInventoryItems } from "@/lib/inventory-items";
 import { getSettings } from "@/lib/settings";
 
+export const dynamic = "force-dynamic";
+
 export async function GET() {
   const products = await prisma.product.findMany({
     include: {

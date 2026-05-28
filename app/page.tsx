@@ -4,6 +4,8 @@ import { itemCounts } from "@/lib/inventory-items";
 import { prisma } from "@/lib/prisma";
 import { centsToDollars } from "@/lib/codes";
 
+export const dynamic = "force-dynamic";
+
 export default async function DashboardPage() {
   const [productCount, variantCount, variants, allVariants, movements, sales, expenses, activities] =
     await Promise.all([

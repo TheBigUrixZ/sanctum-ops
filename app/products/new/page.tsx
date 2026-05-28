@@ -1,6 +1,8 @@
 import ProductForm from "./product-form";
 import { getSettings } from "@/lib/settings";
 
+export const dynamic = "force-dynamic";
+
 export default async function NewProductPage() {
   const settings = await getSettings();
 

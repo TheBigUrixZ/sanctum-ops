@@ -6,6 +6,8 @@ import { prisma } from "@/lib/prisma";
 import { DropForm, ExpenseForm, SaleForm } from "./business-forms";
 import { DeleteExpenseButton, DeleteSaleButton } from "./delete-buttons";
 
+export const dynamic = "force-dynamic";
+
 const tabs = ["Overview", "Drops", "Sales", "Expenses"] as const;
 
 type TabName = (typeof tabs)[number];
