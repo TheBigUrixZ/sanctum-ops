@@ -1,0 +1,37 @@
+{
+  "name": "brand-inventory",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:studio": "prisma studio",
+    "db:init": "prisma db execute --file prisma/init.sql --schema prisma/schema.prisma",
+    "db:physical-items": "prisma db execute --file prisma/physical-items.sql --schema prisma/schema.prisma",
+    "db:backfill-items": "tsx prisma/backfill-inventory-items.ts",
+    "db:backfill-short-barcodes": "tsx prisma/backfill-short-barcodes.ts",
+    "db:seed": "tsx prisma/seed.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.19.3",
+    "jsbarcode": "^3.12.3",
+    "next": "^16.2.6",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
+  },
+  "devDependencies": {
+    "@types/jsbarcode": "^3.11.4",
+    "@types/node": "^20.17.30",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "^16.2.6",
+    "prisma": "^6.19.3",
+    "tsx": "^4.19.3",
+    "typescript": "^6.0.3"
+  }
+}

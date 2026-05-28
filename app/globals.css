@@ -1,0 +1,798 @@
+:root {
+  --bg: #f7f5f0;
+  --panel: #ffffff;
+  --ink: #191a1c;
+  --muted: #62666d;
+  --line: #ded9cf;
+  --accent: #1f6f63;
+  --accent-dark: #13463f;
+  --danger: #b42318;
+  --warning: #985a05;
+  --shadow: 0 18px 48px rgba(38, 32, 21, 0.09);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+}
+
+.sidebar {
+  border-right: 1px solid var(--line);
+  padding: 24px;
+  background: #fbfaf7;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.brand-mark {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  background: var(--ink);
+  color: white;
+  border-radius: 8px;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.brand small {
+  display: block;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+nav {
+  display: grid;
+  gap: 8px;
+}
+
+nav a {
+  padding: 12px 14px;
+  border-radius: 8px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+nav a:hover {
+  background: #ece7dd;
+  color: var(--ink);
+}
+
+.main {
+  padding: 32px;
+  max-width: 1180px;
+  width: 100%;
+}
+
+.page-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+}
+
+h1 {
+  font-size: 36px;
+  margin: 0;
+}
+
+h2 {
+  font-size: 22px;
+  margin: 0 0 14px;
+}
+
+p {
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.button,
+button {
+  border: 0;
+  border-radius: 8px;
+  padding: 12px 16px;
+  background: var(--ink);
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+  min-height: 44px;
+}
+
+.button.secondary,
+button.secondary {
+  background: white;
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+
+button.danger {
+  background: var(--danger);
+}
+
+button.success {
+  background: var(--accent);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+.stats {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.stat,
+.panel,
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.stat {
+  padding: 18px;
+}
+
+.stat span {
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.stat strong {
+  display: block;
+  font-size: 30px;
+  margin-top: 8px;
+}
+
+.panel {
+  padding: 20px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 760px;
+}
+
+th,
+td {
+  padding: 13px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+th {
+  color: var(--muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.sku {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 800;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: #e7f1ef;
+  color: var(--accent-dark);
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.low {
+  background: #fff1d6;
+  color: var(--warning);
+}
+
+.out {
+  background: #ffe3df;
+  color: var(--danger);
+}
+
+.form {
+  display: grid;
+  gap: 18px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+label {
+  display: grid;
+  gap: 7px;
+  color: var(--muted);
+  font-weight: 800;
+  font-size: 13px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px 13px;
+  background: white;
+  color: var(--ink);
+  min-height: 44px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.sku-preview {
+  padding: 16px;
+  background: #efeae0;
+  border: 1px dashed #b7ac98;
+  border-radius: 8px;
+}
+
+.sku-preview strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 22px;
+  overflow-wrap: anywhere;
+}
+
+.scan-input {
+  font-size: 30px;
+  font-weight: 800;
+  min-height: 76px;
+}
+
+.scan-result {
+  display: grid;
+  gap: 14px;
+}
+
+.action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.variant-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.empty {
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  padding: 24px;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.error {
+  color: var(--danger);
+  font-weight: 800;
+}
+
+.notice {
+  padding: 12px 14px;
+  border: 1px solid #b8d9d2;
+  border-radius: 8px;
+  background: #e7f1ef;
+  color: var(--accent-dark);
+  font-weight: 800;
+}
+
+.row-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  min-width: 300px;
+}
+
+.row-actions button {
+  min-height: 36px;
+  padding: 8px 10px;
+  font-size: 12px;
+}
+
+.inventory-product-head {
+  margin-bottom: 12px;
+}
+
+.inventory-item-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.image-thumb {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: #eee8dd;
+  background-position: center;
+  background-size: cover;
+}
+
+.image-thumb.placeholder {
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  background: rgba(25, 26, 28, 0.42);
+}
+
+.modal {
+  width: min(720px, 100%);
+  max-height: calc(100vh - 36px);
+  overflow: auto;
+}
+
+.scanner-shell.scan-flash .scanner-panel {
+  outline: 3px solid #58b89f;
+}
+
+.recent-scans {
+  display: grid;
+  gap: 8px;
+}
+
+.recent-scans div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.export-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.mode-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.compact-button {
+  min-height: 34px;
+  padding: 7px 10px;
+  font-size: 12px;
+}
+
+.danger-panel {
+  border-color: #efb4ad;
+  background: #fffafa;
+}
+
+.login-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.login-panel {
+  width: min(440px, 100%);
+}
+
+.logout-button {
+  width: 100%;
+  margin-top: 16px;
+}
+
+.inline-check {
+  display: inline-flex;
+  grid-template-columns: none;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+}
+
+.inline-check input {
+  width: auto;
+  min-height: auto;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 10px;
+}
+
+.tabs a {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.tabs a.active,
+.tabs a:hover {
+  background: var(--ink);
+  color: white;
+}
+
+.business-stats {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.inventory-layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 420px) minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.inventory-legacy-link {
+  width: fit-content;
+}
+
+.settings-list {
+  display: grid;
+  gap: 14px;
+}
+
+.settings-list div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.settings-list span {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.label-count {
+  max-width: 92px;
+}
+
+.label-preview-panel {
+  overflow: hidden;
+}
+
+.label-sheet {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, var(--label-width, 2in));
+  align-items: start;
+  gap: 0.08in;
+  padding: 12px 0;
+}
+
+.barcode-label {
+  width: var(--label-width, 2in);
+  height: var(--label-height, 1in);
+  display: grid;
+  grid-template-rows: auto auto 1fr auto auto;
+  align-items: center;
+  justify-items: center;
+  padding: 0.05in 0.09in 0.06in;
+  background: white;
+  border: 1px dashed #b9b2a6;
+  color: #111;
+  overflow: hidden;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.label-product {
+  max-width: 100%;
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 1.05;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.label-details {
+  max-width: 100%;
+  font-size: 7px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.label-barcode {
+  width: 1.58in;
+  height: 0.5in;
+  display: block;
+}
+
+.label-short-code,
+.label-item-code {
+  max-width: 100%;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.label-short-code {
+  font-size: 9px;
+}
+
+.label-item-code {
+  font-size: 5px;
+}
+
+@media (max-width: 900px) {
+  .app-shell {
+    display: block;
+  }
+
+  .sidebar {
+    position: static;
+    height: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    padding: 16px;
+  }
+
+  nav {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  nav a {
+    text-align: center;
+    padding: 10px 8px;
+    font-size: 13px;
+  }
+
+  .main {
+    padding: 22px 16px;
+  }
+
+  .stats,
+  .form-grid,
+  .business-stats,
+  .inventory-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .page-head {
+    display: grid;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+}
+
+@media print {
+  @page {
+    size: 2in 1in;
+    margin: 0;
+  }
+
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  html,
+  body {
+    width: 2in;
+    min-width: 2in;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+  }
+
+  :root {
+    --bg: white;
+  }
+
+  body {
+    background: white;
+  }
+
+  .no-print,
+  .sidebar,
+  .page-head,
+  .brand,
+  .logout-button,
+  .tabs,
+  .filter-row,
+  .action-row,
+  input,
+  select,
+  textarea,
+  button,
+  nav {
+    display: none !important;
+  }
+
+  .app-shell,
+  .main,
+  .labels-page,
+  .label-preview-panel {
+    display: block;
+    width: auto;
+    max-width: none;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background: white;
+    overflow: visible;
+  }
+
+  .label-sheet {
+    display: block;
+    width: 2in;
+    height: auto;
+    gap: 0;
+    padding: 0;
+    margin: 0;
+    background: white;
+  }
+
+  .barcode-label {
+    width: 2in !important;
+    height: 1in !important;
+    min-width: 2in;
+    max-width: 2in;
+    min-height: 1in;
+    max-height: 1in;
+    display: grid;
+    grid-template-rows: 0.12in 0.09in 0.53in 0.11in 0.08in;
+    align-items: center;
+    justify-items: center;
+    padding: 0.04in 0.09in 0.05in;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: hidden;
+    page-break-after: always;
+    break-after: page;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .barcode-label:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+
+  .label-product {
+    font-size: 8px;
+    line-height: 1;
+  }
+
+  .label-details {
+    font-size: 6px;
+    line-height: 1;
+  }
+
+  .label-barcode {
+    width: 1.6in !important;
+    min-width: 1.5in;
+    height: 0.52in !important;
+    max-width: 1.6in;
+    max-height: 0.52in;
+    display: block;
+  }
+
+  .label-short-code {
+    font-size: 8px;
+    line-height: 1;
+  }
+
+  .label-item-code {
+    font-size: 5px;
+    line-height: 1;
+  }
+}
+
+@media (max-width: 560px) {
+  nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .scan-input {
+    font-size: 22px;
+  }
+
+  .variant-title {
+    display: grid;
+  }
+}
