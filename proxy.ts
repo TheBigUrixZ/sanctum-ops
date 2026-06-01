@@ -1,4 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server";
+import { AUTH_COOKIE_NAME, isValidAuthCookie } from "@/lib/auth";
 
 const publicPaths = ["/login", "/api/auth/login", "/api/auth/logout"];
 
@@ -13,8 +14,8 @@ export function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
-  const session = request.cookies.get("inventory_session")?.value;
-  if (session === "local") {
+  const session = request.cookies.get(AUTH_COOKIE_NAME)?.value;
+  if (isValidAuthCookie(session)) {
     return NextResponse.next();
   }
 
